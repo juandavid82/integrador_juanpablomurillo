@@ -15,15 +15,20 @@ public class PerfilEstudiante {
     private String experiencia;
     private String proyectos;
 
+    @OneToOne
+    @JoinColumn(name = "estudiante_id", nullable = false, unique = true)
+    private Estudiante estudiante;
+
     public PerfilEstudiante() {
     }
 
-    public PerfilEstudiante(Long id, String resumen, String intereses, String experiencia, String proyectos) {
+    public PerfilEstudiante(Long id, String resumen, String intereses, String experiencia, String proyectos,Estudiante estudiante) {
         this.id = id;
         this.resumen = resumen;
         this.intereses = intereses;
         this.experiencia = experiencia;
         this.proyectos = proyectos;
+        this.estudiante = estudiante;
     }
 
     // --- Getters y Setters ---
@@ -66,4 +71,7 @@ public class PerfilEstudiante {
     public void setProyectos(String proyectos) {
         this.proyectos = proyectos;
     }
+
+    public Estudiante getEstudiante() { return estudiante; }
+    public void setEstudiante(Estudiante estudiante) { this.estudiante = estudiante; }
 }
