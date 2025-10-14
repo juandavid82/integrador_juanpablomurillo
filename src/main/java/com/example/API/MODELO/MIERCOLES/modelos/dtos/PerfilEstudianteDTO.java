@@ -7,6 +7,7 @@ public class PerfilEstudianteDTO {
     private String intereses;
     private String experiencia;
     private String proyectos;
+    private Long estudianteId;
 
     public PerfilEstudianteDTO() {
     }
@@ -59,4 +60,7 @@ public class PerfilEstudianteDTO {
     public void setProyectos(String proyectos) {
         this.proyectos = proyectos;
     }
+
+    public Long getEstudianteId() { return estudianteId; }
+    public void setEstudianteId(Long estudianteId) { this.estudianteId = estudianteId; }
 }
