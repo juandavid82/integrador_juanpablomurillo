@@ -3,6 +3,7 @@ package com.example.API.MODELO.MIERCOLES.modelos;
 
 import com.example.API.MODELO.MIERCOLES.ayudas.EstadosUsuario;
 import com.example.API.MODELO.MIERCOLES.ayudas.RolesUsuario;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -36,6 +37,12 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private EstadosUsuario estado; // Activo o inactivo
+
+
+
+    @OneToOne(mappedBy = "usuario", fetch = FetchType.LAZY)
+    @JsonBackReference(value = "relacionentreusuarioyestudiante")
+    private Estudiante estudiante;
 
     public Usuario() {
     }
@@ -96,6 +103,14 @@ public class Usuario {
 
     public void setEstado(EstadosUsuario estado) {
         this.estado = estado;
+    }
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 }
 
