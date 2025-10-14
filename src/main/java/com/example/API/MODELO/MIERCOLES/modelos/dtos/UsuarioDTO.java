@@ -37,7 +37,7 @@ public class UsuarioDTO {
     // Constructor vacío
     public UsuarioDTO() {}
 
-    // Constructor completo
+
     public UsuarioDTO(Long id, String nombre,String password, String correo, EstadosUsuario estado, RolesUsuario rol) {
         this.id = id;
         this.nombre = nombre;

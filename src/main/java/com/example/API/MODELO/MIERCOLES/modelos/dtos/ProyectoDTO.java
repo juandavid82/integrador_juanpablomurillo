@@ -29,7 +29,7 @@ public class ProyectoDTO {
     // Constructor vacío
     public ProyectoDTO() {}
 
-    // Constructor completo
+
     public ProyectoDTO(Integer id, String titulo, String descripcion, String url, String tecnologias, Integer perfilEstudianteId) {
         this.id = id;
         this.titulo = titulo;
